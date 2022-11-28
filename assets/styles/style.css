@@ -1,0 +1,452 @@
+/* Обнуление */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html, body {
+  height: 100%;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/*-----------------------------------------------------------------*/
+
+/*---HEADER--------------------------------------------------------*/
+.header__logo {
+  font-family: 'Oleo Script', cursive;
+  font-size: 3em;
+  color: #dddddd;
+}
+
+@media screen and (max-width: 460px) {
+  .header__logo {
+    font-size: 2em;
+  }
+}
+
+.header {
+  width: 100%;
+  height: 50px;  
+  flex: 0 0 auto;
+}
+
+@media screen and (max-width: 640px) {
+  .header {
+    position: sticky;
+  }
+}
+
+.header__container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__navbar {
+  width: 100%;
+}
+
+.header__group {
+  display: flex;
+  gap: 5%;
+  justify-content:flex-end;
+
+}
+.link {
+  color: #333;
+  text-decoration: none;
+}
+.link:hover {
+  background: #aaa;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.quiz_link {
+  text-align: center;
+}
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1 0 auto;
+  font-family: 'Oleo Script', cursive;
+  font-size: 2rem;
+  margin: 0 auto;
+}
+
+.welcome_about {
+  text-align: center;
+}
+
+.content {
+  flex: 1 0 auto;
+  display: flex;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1110px) {
+ 
+  .content {
+      width: 100%;
+  }
+}
+
+.footer {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+.footer__container {
+  display: flex;  
+  max-width: 1200px;
+  /* width: 100%; */
+  margin: auto;
+  align-items: center;
+  font-size: 1.5rem;
+  justify-content: space-between;
+}
+
+.footer_school-logo {  
+  height: 45px;
+  width: 120px;
+}
+
+/* ----- Player ------*/
+.player {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.player_playing {
+  background-image: url("../icons/pause.png");
+}
+
+.player__time-bar-large {
+  max-width: 650px;
+  height: 4px;
+  background-color: #dddddd;
+  margin: 20px 0;
+  flex: auto;
+}
+
+.player__time-bar-small {
+  max-width: 100px;
+  height: 4px;
+  background-color: #dddddd;
+  margin: 20px 0;
+  flex: auto;
+}
+
+.player__play-btn {
+  min-width: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color:inherit;
+}
+
+.player__play-btn:not(.player_playing){
+  background-image: url("../icons/play.png");
+}
+
+.player__play-btn:hover {
+  cursor: pointer;
+}
+
+.player__time-info-large {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.player__time-info-small {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  align-self: center;
+}
+
+.player__volume-large {
+  max-width: 70px;
+  margin: 20px 0;
+  flex: auto;
+}
+
+.player__volume-small {
+  max-width: 40px;
+  margin: 20px 0;
+  flex: auto;
+}
+
+/* ----- Quiz ------*/
+.quiz {
+  max-width: 1200px;
+  width: 1200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #333;
+  flex: 1;
+}
+
+@media screen and (max-width: 1201px) {
+  .quiz {   
+    width: 100%;    
+  }
+}
+
+.quiz-basic {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.quiz__score {
+text-align: right;
+}
+
+.quiz__results {
+  display: flex;
+  flex-direction: column;
+  height: 430px;
+  line-height: 40px;
+  align-items: center;
+}
+
+.quiz__stages {
+  min-height: 27px; 
+  display: flex;
+  user-select: none;
+  flex-wrap: wrap;
+}
+
+.quiz__stage {
+  min-width: 198px;
+  text-align: center;
+  flex: auto;
+}
+
+.quiz__stage_current {
+  background-color: #e8e8e8;
+}
+
+.quiz__question {
+  display: flex;
+  height: 180px;
+  padding: 15px;
+  gap: 30px;
+}
+
+.quiz__bird-image {
+  width: 200px;
+  height: 150px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.quiz__question__right-part {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  flex-direction: column;
+  flex: 1;
+}
+
+.quiz__question__bird-name {
+  display: flex;
+  font-size: 24px;
+  flex-grow: 1;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+}
+
+.quiz__question__bird-sound {
+  flex-grow: 2;
+}
+
+.quiz__answers-wrapper {
+  display: flex;
+  height: 250px;
+  gap: 50px;
+}
+
+.quiz__answers {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+.quiz__answer-info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 15px;
+  gap: 10px;
+}
+
+@media screen and (max-width: 1130px) {
+ 
+  .quiz__answers-wrapper {    
+    gap: 10px;
+  }
+}
+
+.quiz__answer {
+  height: 100%;
+  user-select: none;
+  padding: 8px;
+}
+
+.quiz__answer:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+.quiz__wrong-answer {
+  background-color: #fa8072;
+  transition: background-color .7s;
+}
+
+.quiz__right-answer {
+  background-color: #98fb98;
+  transition: background-color .7s;
+}
+
+.quiz__answer:hover {
+  cursor: pointer;
+}
+
+.quiz__answer:hover:not(.quiz__wrong-answer):not(.quiz__right-answer) {
+  background-color: #e8e8e8;
+}
+
+.quiz__answer:active:not(.quiz__wrong-answer):not(.quiz__right-answer)  {
+  background-color: #d3d3d3;
+}
+
+.quiz__next-btn {
+  height: 30px;
+  padding: 3px;
+  text-align: center;
+  user-select: none;
+}
+
+.quiz__next-btn:hover {
+  cursor: pointer;
+}
+
+.quiz__answer-top {
+  display: flex;
+  gap: 30px;
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .quiz__answer-top {    
+    gap: 5px;
+  }
+}
+
+.quiz__answer-description {
+  flex-grow: 5;
+  font-size: 12px;
+}
+
+.quiz__answer__top-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.quiz__answer__bird-name {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  border-bottom: 2px solid #ddd;
+}
+
+.quiz__answer__bird-species {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  border-bottom: 2px solid #ddd;
+}
+
+.quiz__answer__bird-sound {
+  display: flex;
+  align-items: center;
+  flex-grow: 2;
+}
+
+.quiz__try-again-btn {
+  height: 40px;
+  text-align: center;
+  user-select: none;
+  width: 90%;
+}
+
+.quiz__try-again-btn:hover {
+  cursor: pointer;
+}
+
+.quiz__congrat-head {
+  height: 30%;
+  display: flex;
+  font-size: 32px;
+  align-items: end;
+  justify-content: center;
+}
+
+.quiz__congrat-body {
+  height: 30%;
+  font-size: 24px;
+  text-align: center;
+}
+
+.invisible {
+  display: none;
+}
